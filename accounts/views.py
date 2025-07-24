@@ -13,7 +13,7 @@ def register_view(request):
             password = form.cleaned_data['password']
             user = CustomUser.objects.create_user(username=username, email=email, password=password)
             login(request, user)
-            return redirect('/accounts/login/')  # تغییر به صفحه ورود
+            return redirect('/accounts/login/') 
         else:
             messages.error(request, "Please correct the errors below.")
     else:
